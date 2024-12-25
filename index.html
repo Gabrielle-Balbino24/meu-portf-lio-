@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Gabrielle Balbino - Tecnóloga em Análise e Desenvolvimento de Sistemas">
+    <meta name="author" content="Gabrielle Balbino">
+    <meta name="keywords" content="portfólio, tecnologia, programação, web, Gabrielle Balbino">
+    <title>Portfólio - Gabrielle Balbino</title>
+
+    <!-- Link para Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #E6E6FA; /* Lavanda claro */
+            color: #333;
+            text-align: center;
+            padding: 2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #FF69B4; /* Rosa vibrante */
+        }
+
+        /* Seções */
+        section {
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #FF69B4; /* Rosa vibrante */
+            margin-bottom: 1rem;
+        }
+
+        .about, .projects, .skills, .contact {
+            margin-top: 3rem;
+        }
+
+        /* Projetos */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border: 2px solid #E6E6FA; /* Lavanda claro */
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #FF69B4; /* Rosa vibrante */
+            font-size: 1.2rem;
+        }
+
+        /* Botões */
+        .button {
+            padding: 0.75rem 2rem;
+            background-color: #FF69B4; /* Rosa vibrante */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #FF1493; /* Rosa mais escuro */
+        }
+
+        /* Habilidades */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background-color: white;
+            border: 2px solid #E6E6FA;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card h3 {
+            color: #FF69B4;
+        }
+
+        /* Formulário */
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 2px solid #E6E6FA;
+        }
+
+        form button {
+            background-color: #FF69B4;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #FF1493;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #E6E6FA;
+            color: #333;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #FF69B4;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #FF1493;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            section {
+                padding: 5rem 1rem 2rem;
+            }
+
+            .projects-container, .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Gabrielle Balbino</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Sobre Mim -->
+    <section id="about" class="about">
+        <h2>Sobre Mim</h2>
+        <p>Sou Gabrielle Balbino, tecnóloga em Análise e Desenvolvimento de Sistemas, apaixonada por tecnologia e inovação. Busco aplicar meus conhecimentos para criar soluções impactantes e eficientes.</p>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projects" class="projects">
+        <h2>Projetos</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Cardápio Online</h3>
+                <p>Sistema interativo para restaurantes, desenvolvido com HTML, CSS e JavaScript.</p>
+            </div>
+            <div class="project-card">
+                <h3>Dashboard de Vendas</h3>
+                <p>Gráficos interativos criados com Power BI, analisando métricas de vendas.</p>
+            </div>
+            <div class="project-card">
+                <h3>Site Institucional</h3>
+                <p>Modelo de site para empresas, com design responsivo e moderno.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="skills" class="skills">
+        <h2>Habilidades</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Desenvolvimento de páginas web com HTML5, estruturando conteúdo de forma semântica.</p>
+            </div>
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Estilização de interfaces com CSS3, criando layouts responsivos e modernos.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Desenvolvimento de sistemas robustos e escaláveis utilizando Java.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Power BI</h3>
+                <p>Criação de dashboards interativos para análise de dados e visualização de métricas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contact" class="contact">
+        <h2>Contato</h2>
+        <form action="#">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <textarea placeholder="Escreva sua mensagem..." required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Gabrielle Balbino</p>
+        <a href="mailto:gabriellebalbino64@gmail.com">Email</a> | <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+    </footer>
+</body>
+
+</html>

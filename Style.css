@@ -1,0 +1,277 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+/* Transição global para suavizar animações */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Header */
+header {
+  background-color: #6a5acd; /* Lavanda escuro */
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  animation: fadeIn 2s ease-in-out; /* Animação de fade-in */
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+header nav ul li {
+  font-size: 1.1rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #ff1493; /* Rosa vibrante */
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Seções */
+section {
+  padding: 6rem 2rem 2rem;
+  text-align: center;
+  color: #333;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  color: #6a5acd; /* Lavanda escuro */
+  margin-bottom: 2rem;
+  animation: slideUp 1s ease-out; /* Animação de slide-up */
+}
+
+@keyframes slideUp {
+  from {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Card de Projetos */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.project-card {
+  background-color: white;
+  border: 2px solid #6a5acd; /* Lavanda escuro */
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: pulse 1s infinite; /* Animação de pulsar */
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.project-card h3 {
+  color: #6a5acd; /* Lavanda escuro */
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Botões */
+.button {
+  padding: 0.75rem 2rem;
+  background-color: #ff1493; /* Rosa vibrante */
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ff69b4; /* Rosa mais suave */
+  transform: translateY(-5px);
+}
+
+/* Formulário de Contato */
+form input, form textarea, form button {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 2px solid #e6e6fa; /* Lavanda claro */
+  font-size: 1rem;
+}
+
+form input, form textarea {
+  color: #333;
+}
+
+form button {
+  background-color: #6a5acd; /* Lavanda escuro */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #ff1493; /* Rosa vibrante */
+}
+
+/* Rodapé */
+footer {
+  background-color: #6a5acd; /* Lavanda escuro */
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+footer p {
+  font-size: 1.1rem;
+}
+
+footer a {
+  color: #ff1493; /* Rosa vibrante */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff69b4; /* Rosa mais suave */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header nav ul {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  section {
+      padding: 5rem 1rem 2rem;
+  }
+
+  .projects-container {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Efeito de parallax para o fundo */
+.parallax {
+  background: url('https://source.unsplash.com/1600x900/?technology,computer') no-repeat center center fixed;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  top: 5rem;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+}
+
+.parallax h2 {
+  color: white;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Estilo padrão para telas maiores */
+body {
+  font-size: 16px;
+  margin: 20px;
+}
+
+/* Ajustes para telas menores (celulares) */
+@media (max-width: 768px) {
+  body {
+      font-size: 14px;
+      margin: 10px;
+  }
+
+  .container {
+      flex-direction: column;
+      padding: 10px;
+  }
+}
+
+
